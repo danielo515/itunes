@@ -45,6 +45,14 @@ export const fetchSongs = _ => dispatch => {
     .catch(fetchFailed(dispatch));
 };
 
+export const fetchPage = page => dispatch => {
+  dispatch({ type: FETCH_SONGS });
+  return api
+    .get(`${SONGS_PATH}?page=${page}`)
+    .then(fetchSucceed(dispatch))
+    .catch(fetchFailed(dispatch));
+};
+
 export const getCoverUrl = songId => dispatch => {
   dispatch({ type: FETCH_COVER });
   return api
@@ -58,6 +66,7 @@ export const getCoverUrl = songId => dispatch => {
 export const actionCreators = {
   fetchSongs,
   getCoverUrl,
+  fetchPage,
 };
 
 // MAIN REDUCER

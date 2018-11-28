@@ -11,6 +11,8 @@ const styles = theme => ({
     alignItems: 'center',
     width: '100%',
     height: '100%',
+    position: 'absolute',
+    zIndex: 10,
     opacity: 0.7,
   },
   spinner: {},

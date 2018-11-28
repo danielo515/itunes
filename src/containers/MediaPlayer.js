@@ -52,6 +52,12 @@ class MediaPlayer extends Component {
             like={props.like}
             onSortChange={props.sortBy}
             onSelect={props.select}
+            footer={{
+              nextPage: () => props.fetchPage(playList.page + 1),
+              prevPage: () => props.fetchPage(playList.page - 1),
+              page: playList.page + 1 || 0,
+              pages: Math.round(playList.total / playList.pageSize) || 0,
+            }}
             dislike={props.unlike}
             // Static props
             sortBy={playList.sortBy}

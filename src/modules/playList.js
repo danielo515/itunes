@@ -111,6 +111,7 @@ export default ({ SONGS_LOADED }) => (
         current: action.payload.songs[0],
         page: action.payload.page,
         total: action.payload.total,
+        pageSize: action.payload.pageSize,
       };
     default:
       return state;

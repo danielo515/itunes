@@ -20,10 +20,12 @@ const styles = theme => ({
   },
   body: {
     maxHeight: '50vh',
+    minHeight: '50vh',
     overflowY: 'scroll',
   },
   loading: {
     minHeight: '200px',
+    top: '33%',
   },
 });
 
@@ -38,6 +40,7 @@ function PlayList(props) {
     loading,
     dislike,
     onSortChange,
+    footer,
     sortBy,
   } = props;
 
@@ -74,7 +77,11 @@ function PlayList(props) {
             </ListItem>
           ))}
         </Paper>
-        <Footer totalSongs={data.length} totalFavorites={favorites.length} />
+        <Footer
+          totalSongs={data.length}
+          totalFavorites={favorites.length}
+          {...footer}
+        />
       </List>
     </div>
   );
